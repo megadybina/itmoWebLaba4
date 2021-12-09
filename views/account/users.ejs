@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/css/styles.css" type="text/css"/>  <!-- подключение стилей из файла -->
+		<script type="text/javascript" src="/js/scripts.js"></script>  <!-- подключение js из файла -->
+		
+		<title>Пользователи</title> 
+		<link rel="icon" href="https://iconarchive.com/download/i95569/iconsmind/outline/Black-Cat.ico" type="image/x-icon">
+	</head>
+	
+	<body>
+		
+		<%- include('../partials/header'); -%>
+		
+		<div class="flex-blog" id="flex-blog">
+			<div class="flex-title">
+				<h3 style="padding: 10px">Зарегистрированные котики</h3>
+			</div>
+			<script>
+				const userList = JSON.parse('<%- JSON.stringify(userList) %>');
+				WriteUserList(userList);   
+			</script>
+		</div>
+		
+		<%- include('../partials/footer'); -%>
+	</body>
+
+</html>

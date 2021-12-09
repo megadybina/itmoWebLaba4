@@ -1,0 +1,19 @@
+<div class="header">
+    <h1><a href="/" style="color:white">Котограм</a></h1>
+    <div class="dropdown"> 
+      <button class="menubtn" onclick="toggleMenu();">
+        <span class="menubtn-icon-line menubtn-icon-line_top" style="padding: 0;"></span>
+        <span class="menubtn-icon-line" style="padding: 0;"></span>
+        <span class="menubtn-icon-line menubtn-icon-line_bottom" style="padding: 0;"></span>
+      </button>
+      <form action="/account/logout" method="POST" id="logoutForm"></form>
+        <ul id="menu">
+            <li><a href="/blog/">Блог<div class="notification-circle">3</div></a></li>
+            <li><a href="/account/">Пользователи</a></li>
+        </ul>
+    </div>  
+</div>
+<script>
+    const curLogin = "<%=currentLogin%>";
+    IsLoggedIn(curLogin);   
+</script>

@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/css/styles.css" type="text/css"/>  <!-- подключение стилей из файла -->
+		<script type="text/javascript" src="/js/scripts.js"></script>  <!-- подключение js из файла -->
+		
+		<title>Профиль</title> 
+		<link rel="icon" href="https://iconarchive.com/download/i95569/iconsmind/outline/Black-Cat.ico" type="image/x-icon">
+	</head>
+	
+	<body>
+		<%- include('../partials/header'); -%>
+		
+
+		<div class="flex-container" style="flex-flow: row;">
+			<div class="flex-profile-info" style="flex: 1">
+				<div class="flex-profile-item" style="padding-left: 10px;">
+					<img src= "<%=user.ava %>" border="2px" width="200px" margin="15px" align="left" alt="аватарка"></div>
+				<div class="flex-profile-item">
+					<span style="font-size: 27px;"><b><%=user.name %></b></span><span id="editButton"></span><br><br></div>
+				<div class="flex-profile-item">
+					<span style="font-size: 20px">Дата рождения: <%=user.bday %></span><br><br></div>
+				<div class="flex-profile-item">
+					<span style="font-size: 20px">Профессия: <%=user.job %></span><br><br></div>
+			</div>
+			<aside>
+				<p>Реклама заблокирована AdBlock</p>
+			</aside>
+		</div>
+		
+		<div class="flex-blog" id="flex-blog">
+			<div class="flex-title">
+				<h3 style="padding: 10px">Стена записочек<span id="newPostButton" style="display: inline; float: right;"></span></h3> 
+			</div>
+			<script>
+				const posts = JSON.parse('<%- JSON.stringify(posts) %>');
+				WriteUserPosts(posts);
+				toggleEditProfileButton(curLogin);   
+				toggleNewPostButton(curLogin);
+			</script>
+		</div>
+		
+		<%- include('../partials/footer'); -%>
+	</body>
+
+</html>

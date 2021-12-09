@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Вкот</title>
+		<link rel="icon" href="https://iconarchive.com/download/i95569/iconsmind/outline/Black-Cat.ico" type="image/x-icon">
+		
+		<style type="text/css">
+			body {
+				font-family: Courier, monospace;
+				background:#83b7eb ;
+				width: 70%;
+				height: 40%;
+				margin: auto; 
+			}
+			.flex-container {
+				display: flex;
+				flex-flow: column;
+			}
+			.flex-box {
+				display: flex;
+				flex-direction: column;
+				background-color: #b290eb;
+				margin-top: 15px;
+				padding: 20px;
+				font-size: 18px;
+				border-radius: 5px;
+				border-top: 3px solid gray;
+				border-left: 3px solid gray;
+			}
+			form{
+				text-align: center;
+				vertical-align: center;
+			}	
+			label{
+				display: inline-block;
+				clear: left;
+				text-align: right;
+				margin-top: 10px;
+				width: 210px;
+			}
+			input {
+				background-color: #83b7eb;
+				color: white;
+				border-radius:5px;
+				float: center;
+			}
+			
+			@media handheld, screen and (max-width: 1080px) {
+				body{
+					max-width: 100%;
+				}
+				label{
+					text-align: center;
+				}
+			}
+		</style>
+	</head>
+    <body>
+		<div class="flex-container">
+			<div class ="flex-box">
+				<form action="/account/login" method="POST">
+					<label>Логин:</label> <input type="text" name="login" /><br />
+					<label>Пароль:</label> <input type="password" name="password"><br />
+					<input type="submit" value="Вкот" style="margin: 20px 0px 20px 0px; font-size: 22px;"/>
+				</form>
+				<span style="margin:0 auto;">еще не котик? <a href="/account/signin" style="color:#1F4BCC ">стать котиком</a></span>
+			</div>
+		</div>
+    </body>
+</html>

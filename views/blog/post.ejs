@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/css/styles.css" type="text/css"/>  <!-- подключение стилей из файла -->
+		<script type="text/javascript" src="/js/scripts.js"></script>  <!-- подключение js из файла -->
+		
+		<title>Постик <%=postId%></title> 
+		<link rel="icon" href="https://iconarchive.com/download/i95569/iconsmind/outline/Black-Cat.ico" type="image/x-icon">
+	</head>
+	
+	<body>
+		
+		<%- include('../partials/header'); -%>
+		
+		<div class="flex-blog" id="flex-blog">
+			<div class="flex-box">
+                <article> 
+                    <a href='/account/<%=post.userId%>'><img class="blog-miniava" src=<%=post.ava%> border="1px" margin="15px" align="left" alt="аватарка"></a>
+                    <span style="font-size: 22px;"><b><%=post.postTitle%></b></span><span id="editPostButton" style="display: inline; float: right;"></span>
+                    <hr><br>
+                    <img class="blog-foto" src=<%=post.postPhoto%> border="2px" height="250px" margin="20px" align="left">
+                    <span><%=post.postText%></span>
+                </article>
+                <hr>
+                <div class="flex-blog-comments">
+                    <div class="blog-comments-item">
+                        <img class="blog-icon" src="http://cdn.onlinewebfonts.com/svg/img_73674.png"><span style="vertical-align: middle; padding-top:4px; padding-left:0px;">53 нравки</span></div>
+                    <div class="blog-comments-item">
+                        <img class="blog-icon" src="http://simpleicon.com/wp-content/uploads/retweet.png"><span style="vertical-align: middle; padding-top:4px; padding-left:0px;">17 ремявок</span></div>
+                    <div class="blog-comments-item">
+                        <img class="blog-icon" src="https://www.nicepng.com/png/full/12-122557_loading-cat-comments-cat-icon-white-png.png"><span style="vertical-align: middle; padding-top:4px; padding-left:0px;">3 комментика</span></div>
+                </div>
+            </div>
+		</div>
+		<script>
+            var postId = "<%=postId%>"
+            toggleEditPostButton(curLogin, postId, '<%=post.userId%>');
+        </script>
+		<%- include('../partials/footer'); -%>
+	</body>
+
+</html>

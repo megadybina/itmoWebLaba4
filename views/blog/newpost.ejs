@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Новый пост</title>
+		<link rel="icon" href="https://iconarchive.com/download/i95569/iconsmind/outline/Black-Cat.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css"/>  <!-- подключение стилей из файла -->
+		<script type="text/javascript" src="/js/scripts.js"></script>  <!-- подключение js из файла -->
+		
+		<style type="text/css">
+			body {
+				background:#83b7eb ;
+				width: 70%;
+				height: 40%;
+				margin: auto; 
+			}
+			.flex-container {
+                font-family: Courier, monospace;
+				display: flex;
+				flex-flow: column;
+			}
+			.flex-box {
+				display: flex;
+				flex-direction: column;
+				background-color: #b290eb;
+				font-size: 18px;
+				border-radius: 5px;
+				border-top: 3px solid gray;
+				border-left: 3px solid gray;
+			}
+			form{
+				text-align: center;
+				vertical-align: center;
+			}	
+			label{
+				display: inline-block;
+				clear: left;
+				text-align: right;
+				margin-top: 10px;
+				width:210px;
+			}
+			input {
+				background-color: #83b7eb;
+				color: white;
+				border-radius:5px;
+				float: center;
+                width: 200px;
+			}
+			
+			@media handheld, screen and (max-width: 1080px) {
+				body{
+					max-width: 100%;
+				}
+				label{
+					text-align: center;
+				}
+			}
+		</style>
+	</head>
+    <body>
+        <%- include('../partials/header'); -%>
+		<div class="flex-container" style="padding-left: 15px; padding-right: 15px;">
+			<div class ="flex-box">
+				<form action="/blog/post/newpost" method="POST">
+					<label>Заголовок поста:</label> <input type="text" name="postTitle" /><br />
+					<label>Текст поста:</label> <input type="text" name="postText"><br />
+					<label>Ссылка на картинку:</label> <input type="text" name="postPhoto"><br />
+					<input type="submit" value="Запостить" style="margin-top: 20px; font-size: 22px;"/>
+				</form>
+			</div>
+		</div>
+    </body>
+</html>

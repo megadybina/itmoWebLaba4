@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Редактирование</title>
+		<link rel="icon" href="https://iconarchive.com/download/i95569/iconsmind/outline/Black-Cat.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/css/styles.css" type="text/css"/>  <!-- подключение стилей из файла -->
+		<script type="text/javascript" src="/js/scripts.js"></script>  <!-- подключение js из файла -->
+		<style type="text/css">
+			body {
+				background:#83b7eb ;
+				width: 70%;
+				height: 40%;
+				margin: auto; 
+			}
+			.flex-container {
+				font-family: Courier, monospace;
+				display: flex;
+				flex-flow: column;
+			}
+			.flex-box {
+				display: flex;
+				flex-direction: column;
+				background-color: #b290eb;
+				margin-top: 15px;
+				padding: 20px;
+				font-size: 18px;
+				border-radius: 5px;
+				border-top: 3px solid gray;
+				border-left: 3px solid gray;
+			}
+			form{
+				text-align: center;
+				vertical-align: center;
+			}	
+			label{
+				display: inline-block;
+				clear: left;
+				text-align: right;
+				margin-top: 10px;
+				width:210px;
+			}
+			input {
+				background-color: #83b7eb;
+				color: white;
+				border-radius:5px;
+				float: center;
+				width: 180px;
+			}
+			
+			@media handheld, screen and (max-width: 1080px) {
+				body{
+					max-width: 100%;
+				}
+				label{
+					text-align: center;
+				}
+			}
+		</style>
+	</head>
+    <body>
+		<%- include('../partials/header'); -%>
+		<div class="flex-container" style="padding-left: 15px; padding-right: 15px;">
+			<div class ="flex-box">
+				<form action="/account/edit" method="POST">
+					<label>Имя:</label> <input type="text" name="name" value="<%=user.name %>" /><br />
+					<label>Дата рождения:</label> <input type="date" name="bday" value=<%=user.bday %>><br />
+					<label>Профессия:</label> <input type="text" name="job" value="<%=user.job %>"><br />
+					<label>Ссылка на аватарку:</label> <input type="text" name="ava" value="<%=user.ava %>"><br />
+					<input type="submit" value="Сохранить" style="margin-top: 20px; font-size: 22px;"/>
+				</form>
+			</div>
+		</div>
+    </body>
+</html>
